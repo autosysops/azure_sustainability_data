@@ -16,8 +16,8 @@ jobs:
     - uses: EndBug/add-and-commit@v9
       with:
         add: 'regiondata.json'
-        default_author: Sustainability_Bot
-        author_email: leo.visser@autosysops.com
+        committer_name: github_actions
+        committer_email: leo.visser@autosysops.com
         message: 'New version of regiondata'
         new_branch: testbranch
     - uses: rematocorp/open-pull-request-action@v1
