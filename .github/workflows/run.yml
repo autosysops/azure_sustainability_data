@@ -6,6 +6,7 @@
 jobs:
   build:
 
+    continue-on-error: true
     runs-on: windows-latest
 
     steps:
@@ -20,13 +21,10 @@ jobs:
         message: 'New version of regiondata'
         branch: 'refs/heads/testbranch'
     - uses: rematocorp/open-pull-request-action@v1
+      if: success()
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         from-branch: testbranch
         to-branch: main
         repository-owner: autosysops
         repository: azure_sustainability_data
-    - name: Automerge
-      run: gh pr merge --merge --auto ${{ steps.open_pr.outputs.pull_number }}
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
