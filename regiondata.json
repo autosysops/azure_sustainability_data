@@ -1,0 +1,282 @@
+[
+  {
+    "carbon": {
+      "pue": "1.358",
+      "renewable": "13%"
+    },
+    "id": "southeastasia",
+    "water": {
+      "wue": "2.06"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": "28%"
+    },
+    "id": "australiaeast",
+    "water": {
+      "wue": "0.012"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": "28%"
+    },
+    "id": "australiasoutheast",
+    "water": {
+      "wue": "0.012"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": "79%"
+    },
+    "id": "austriaeast",
+    "water": {
+      "wue": "0.023"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": "5%"
+    },
+    "id": "brazilsouth",
+    "water": {
+      "wue": "0.039"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.16",
+      "renewable": "10%"
+    },
+    "id": "denmarkeast",
+    "water": {
+      "wue": "0.01"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.197",
+      "renewable": "49%"
+    },
+    "id": "northeurope",
+    "water": {
+      "wue": "0.03"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.158",
+      "renewable": "79%"
+    },
+    "id": "westeurope",
+    "water": {
+      "wue": "0.08"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": "10%"
+    },
+    "id": "finlandcentral",
+    "water": {
+      "wue": "0.01"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": null
+    },
+    "id": "greececentral",
+    "water": {
+      "wue": "0.102"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.43",
+      "renewable": "46%"
+    },
+    "id": "southcentralindia",
+    "water": {
+      "wue": "0.0"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.32",
+      "renewable": "13%"
+    },
+    "id": "indonesiacentral",
+    "water": {
+      "wue": "1.90"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": "15%"
+    },
+    "id": "italynorth",
+    "water": {
+      "wue": "0.023"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": null
+    },
+    "id": "mexicocentral",
+    "water": {
+      "wue": "0.056"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": null
+    },
+    "id": "newzealandnorth",
+    "water": {
+      "wue": "0.0"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": null
+    },
+    "id": "polandcentral",
+    "water": {
+      "wue": "0.023"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": "15%"
+    },
+    "id": "spaincentral",
+    "water": {
+      "wue": "0.06"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.172",
+      "renewable": null
+    },
+    "id": "swedencentral",
+    "water": {
+      "wue": "0.16"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.20",
+      "renewable": null
+    },
+    "id": "taiwannorth",
+    "water": {
+      "wue": "1.00"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.16",
+      "renewable": "100%"
+    },
+    "id": "centralus",
+    "water": {
+      "wue": "0.19"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.144",
+      "renewable": "70%"
+    },
+    "id": "eastus",
+    "water": {
+      "wue": "0.17"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.144",
+      "renewable": "70%"
+    },
+    "id": "eastus2",
+    "water": {
+      "wue": "0.17"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.12",
+      "renewable": "8%"
+    },
+    "id": "eastus3",
+    "water": {
+      "wue": "0.060"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.346",
+      "renewable": "70%"
+    },
+    "id": "northcentralus",
+    "water": {
+      "wue": "0.79"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.307",
+      "renewable": "100%"
+    },
+    "id": "southcentralus",
+    "water": {
+      "wue": "1.82"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.125",
+      "renewable": "47%"
+    },
+    "id": "westcentralus",
+    "water": {
+      "wue": "0.23"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.156",
+      "renewable": "47%"
+    },
+    "id": "westus2",
+    "water": {
+      "wue": "1.09"
+    }
+  },
+  {
+    "carbon": {
+      "pue": "1.223",
+      "renewable": "47%"
+    },
+    "id": "westus3",
+    "water": {
+      "wue": "2.24"
+    }
+  }
+]
