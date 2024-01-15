@@ -18,6 +18,7 @@ jobs:
         add: 'regiondata.json'
         message: 'New version of regiondata'
         new_branch: testbranch
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - uses: rematocorp/open-pull-request-action@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
