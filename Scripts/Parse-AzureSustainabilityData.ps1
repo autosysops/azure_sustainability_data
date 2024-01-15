@@ -172,7 +172,7 @@ foreach ($region in ($regions | Where-Object { ($_.sustainabilityFactsheet -ne "
     }
 
     # Store data
-    $regiondata += @{
+    $regiondata += [ordered]@{
         id     = $region.id
         carbon = @{
             pue      = $pue
