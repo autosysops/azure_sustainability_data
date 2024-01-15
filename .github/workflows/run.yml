@@ -4,7 +4,7 @@
       - main
 
 jobs:
-  build:
+  getdata:
 
     runs-on: windows-latest
 
