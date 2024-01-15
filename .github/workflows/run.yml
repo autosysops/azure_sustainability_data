@@ -26,3 +26,7 @@ jobs:
         to-branch: main
         repository-owner: autosysops
         repository: azure_sustainability_data
+    - name: Enable Pull Request Automerge
+      run: gh pr merge --merge --auto ${{ steps.open_pr.outputs.pull_number }}
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
