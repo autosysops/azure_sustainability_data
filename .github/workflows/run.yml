@@ -16,6 +16,8 @@ jobs:
     - uses: EndBug/add-and-commit@v9
       with:
         add: 'regiondata.json'
+        committer_name: GitHub Actions
+        committer_email: actions@github.com
         message: 'New version of regiondata'
         new_branch: testbranch
         github_token: ${{ secrets.GITHUB_TOKEN }}
