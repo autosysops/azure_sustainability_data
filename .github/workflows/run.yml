@@ -1,0 +1,29 @@
+﻿on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: .\Scripts\Parse-AzureSustainabilityData.ps1
+      shell: powershell
+    - uses: EndBug/add-and-commit@v9
+      with:
+        add: 'regiondata.json'
+        author_name: Sustainability_Bot
+        author_email: leo.visser@autosysops.com
+        message: 'New version of regiondata'
+        new_branch: test-branch
+    - uses: rematocorp/open-pull-request-action@v1
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        from-branch: test-branch
+        to-branch: main
+        repository-owner: autosysops
+        repository: azure_sustainability_data
