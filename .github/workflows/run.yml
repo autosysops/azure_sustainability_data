@@ -4,7 +4,7 @@
       - main
 
 jobs:
-  getdata:
+  build:
 
     runs-on: windows-latest
 
@@ -13,12 +13,11 @@ jobs:
     - name: Build
       run: .\Scripts\Parse-AzureSustainabilityData.ps1
       shell: pwsh
-    - name: Commit & Push changes
-      uses: actions-js/push@master
+    - uses: EndBug/add-and-commit@v9
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        add: 'regiondata.json'
         message: 'New version of regiondata'
-        branch: 'testbranch'
+        new_branch: testbranch
     - uses: rematocorp/open-pull-request-action@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
