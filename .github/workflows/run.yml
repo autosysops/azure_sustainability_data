@@ -18,7 +18,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         message: 'New version of regiondata'
-        branch: 'HEAD:refs/heads/testbranch'
+        branch: 'refs/heads/testbranch'
     - uses: rematocorp/open-pull-request-action@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
