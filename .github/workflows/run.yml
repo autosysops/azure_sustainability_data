@@ -13,14 +13,12 @@ jobs:
     - name: Build
       run: .\Scripts\Parse-AzureSustainabilityData.ps1
       shell: pwsh
-    - uses: EndBug/add-and-commit@v9
+    - name: Commit & Push changes
+      uses: actions-js/push@master
       with:
-        add: 'regiondata.json'
-        committer_name: GitHub Actions
-        committer_email: actions@github.com
-        message: 'New version of regiondata'
-        new_branch: testbranch
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        message: 'New version of regiondata'
+        branch: 'testbranch'
     - uses: rematocorp/open-pull-request-action@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
