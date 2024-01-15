@@ -10,16 +10,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - run: .\Scripts\Parse-AzureSustainabilityData.ps1
+    - name: Build
+      run: .\Scripts\Parse-AzureSustainabilityData.ps1
       shell: pwsh
-    - uses: github-actions-x/commit@v2.9
+    - uses: EndBug/add-and-commit@v9
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        push-branch: 'testbranch'
-        commit-message: 'new regiondata.json'
-        files: regiondata.json
-        name: sustainability_bot
-        email: leo.visser@autosysops.com
+        add: 'regiondata.json'
+        message: 'New version of regiondata'
+        new_branch: testbranch
     - uses: rematocorp/open-pull-request-action@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
