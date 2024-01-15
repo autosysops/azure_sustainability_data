@@ -1,28 +1,27 @@
 ﻿on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: '0 12 * * *'
 
 jobs:
-  build:
+  ParseData:
 
     continue-on-error: true
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Build
+    - name: Check out main branch
+      uses: actions/checkout@v1
+    - name: Get data from azure globe
       run: .\Scripts\Parse-AzureSustainabilityData.ps1
       shell: pwsh
-    - name: Commit & Push changes
+    - name: commit changes to new branch
       uses: actions-js/push@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         message: 'New version of regiondata'
         branch: 'refs/heads/newbranch'
-    - uses: rematocorp/open-pull-request-action@v1
+    - name: create pull request
+      uses: rematocorp/open-pull-request-action@v1
       if: success()
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}

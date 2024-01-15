@@ -95,19 +95,12 @@ foreach ($region in ($regions | Where-Object { ($_.sustainabilityFactsheet -ne "
 
                 if (($spaces -gt 3) -or (($charindex -eq ($line.Length - 1)) -and $inText)) {
                     $hits = @()
-                    #Write-Host "Text = $($line[($textStart..$charindex)] -join '')"
                     foreach ($column in $columns) {
-                        #Write-Host "column = $($column.Name)"
-                        #Write-Host "textstart = $textStart"
-                        #Write-Host "column start = $($column.Start)"
-                        #Write-Host "textend = $charindex"
-                        #Write-Host "column end = $($column.End)"
                         if (($textStart -lt $column.Start) -and ($charindex -lt $column.Start)) {
                             $hits += @{
                                 Percentage = 0
                                 Column     = $column.Name
                             }
-                            #Write-Host "SKIP 1"
                             continue
                         }
 
@@ -116,7 +109,6 @@ foreach ($region in ($regions | Where-Object { ($_.sustainabilityFactsheet -ne "
                                 Percentage = 0
                                 Column     = $column.Name
                             }
-                            #Write-Host "SKIP 2"
                             continue
                         }
 
@@ -130,12 +122,9 @@ foreach ($region in ($regions | Where-Object { ($_.sustainabilityFactsheet -ne "
                             Percentage = [System.Math]::Round((1 - (($left + $right) / ($charindex - $textStart + 1))) * 100, 0)
                             Column     = $column.Name
                         }
-
-                        #Write-Host "Percentage = $([System.Math]::Round((1 - (($left + $right) / ($charindex - $textStart)))*100,0))"
                     }
 
                     $columnname = ($hits | Where-Object { $_.Percentage -eq ($hits.Percentage | Measure-Object -Maximum).Maximum }).Column
-                    #Write-Host "Name HIT = $columnname"
                     $column = $columns | Where-Object { $_.Name -eq $columnname }
                     $column.text += $line[($textStart..$charindex)] -join ""
                     $inText = $false
