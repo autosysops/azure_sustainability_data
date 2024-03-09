@@ -53,7 +53,7 @@
     "id": "denmarkeast",
     "carbon": {
       "pue": "1.16",
-      "renewable": "10%"
+      "renewable": null
     },
     "water": {
       "wue": "0.01"
