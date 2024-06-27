@@ -1,3 +1,4 @@
+Write-Host "start script"
 # Install module to extract data from PDF
 Install-Module -Name ExtractPDFData -Confirm:$false -Force
 Import-Module -Name ExtractPDFData -Force
