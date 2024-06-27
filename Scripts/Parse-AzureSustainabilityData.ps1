@@ -3,15 +3,19 @@ Write-Host "start script"
 Install-Module -Name ExtractPDFData -Confirm:$false -Force
 Import-Module -Name ExtractPDFData -Force
 
+Write-Host "did import"
+
 # Retrieve all Sustainability Reports
 $regions = Invoke-RestMethod -Uri "https://datacenters.microsoft.com/globe/data/geo/regions.json" -Method Get
+
+Write-Host "done invoke"
 
 # Create a folder to store the sustainability fact sheets
 if (-not (Test-Path "Files")) {
     $null = New-Item -Name "Files" -Type Directory
 }
 
-Write-Host "Got regions"
+Write-Host "made path"
 
 # Store data
 $regiondata = @()
