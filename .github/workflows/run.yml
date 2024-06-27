@@ -12,7 +12,8 @@ jobs:
     - name: Check out main branch
       uses: actions/checkout@v1
     - name: Get data from azure globe
-      run: .\Scripts\Parse-AzureSustainabilityData.ps1
+      run: |
+        ./Scripts/Parse-AzureSustainabilityData.ps1
       shell: pwsh
     - name: commit changes to new branch
       uses: actions-js/push@master
