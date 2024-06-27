@@ -10,11 +10,14 @@ if (-not (Test-Path "Files")) {
     $null = New-Item -Name "Files" -Type Directory
 }
 
+Write-Host "Got regions"
+
 # Store data
 $regiondata = @()
 
 foreach ($region in ($regions | Where-Object { ($_.sustainabilityFactsheet -ne "") -and ($_.sustainabilityFactsheet -ne $null) })) {
 
+    Write-Host "Test $($region.id)"
     # Download the factsheet
     Invoke-WebRequest -Uri "https://datacenters.microsoft.com/globe$($region.sustainabilityFactsheet)" -Method GET -OutFile (Join-Path $PSScriptRoot "..\Files\$($region.id).pdf")
 
@@ -133,6 +136,7 @@ foreach ($region in ($regions | Where-Object { ($_.sustainabilityFactsheet -ne "
             }
         }
     }
+    Write-Host "get PUE data"
 
     # retrieve the PUE data
     $carbondata = (($columns | Where-Object { $_.Name -eq "CARBON" }).text -join " ")
@@ -142,6 +146,7 @@ foreach ($region in ($regions | Where-Object { ($_.sustainabilityFactsheet -ne "
     else {
         $pue = $null
     }
+    Write-Host "get renewable energy data"
 
     # retrieve renewable energy data
     if ($carbondata -match "(\d+%)(.*)(enewable energy coverage)") {
@@ -150,6 +155,7 @@ foreach ($region in ($regions | Where-Object { ($_.sustainabilityFactsheet -ne "
     else {
         $renewable = $null
     }
+    Write-Host "get WUE data"
 
     # retrieve WUE data
     $waterdata = (($columns | Where-Object { $_.Name -eq "WATER" }).text -join " ")
@@ -159,6 +165,7 @@ foreach ($region in ($regions | Where-Object { ($_.sustainabilityFactsheet -ne "
     else {
         $wue = $null
     }
+    Write-Host "store data"
 
     # Store data
     $regiondata += [ordered]@{

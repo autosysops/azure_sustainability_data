@@ -163,10 +163,10 @@
     "id": "spaincentral",
     "carbon": {
       "pue": "1.12",
-      "renewable": "15%"
+      "renewable": null
     },
     "water": {
-      "wue": "0.06"
+      "wue": "0.023"
     }
   },
   {
