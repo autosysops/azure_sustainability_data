@@ -1,10 +1,6 @@
 # Install module to extract data from PDF
-$VerbosePreference = "Continue"
-Write-Host "install"
 Install-Module -Name ExtractPDFData -Confirm:$false -Force
-Write-Host "import"
 Import-Module -Name ExtractPDFData -Force
-Write-Host "done"
 
 # Retrieve all Sustainability Reports
 $regions = Invoke-RestMethod -Uri "https://datacenters.microsoft.com/globe/data/geo/regions.json" -Method Get
