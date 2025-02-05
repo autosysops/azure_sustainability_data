@@ -53,7 +53,7 @@
     "id": "denmarkeast",
     "carbon": {
       "pue": "1.16",
-      "renewable": null
+      "renewable": "10%"
     },
     "water": {
       "wue": "0.01"
@@ -163,10 +163,10 @@
     "id": "spaincentral",
     "carbon": {
       "pue": "1.12",
-      "renewable": null
+      "renewable": "15%"
     },
     "water": {
-      "wue": "0.023"
+      "wue": "0.06"
     }
   },
   {
